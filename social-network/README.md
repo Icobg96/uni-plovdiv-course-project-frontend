@@ -1,4 +1,3 @@
-# uni-plovdiv-course-project
 # social-network
 
 ## Project setup
