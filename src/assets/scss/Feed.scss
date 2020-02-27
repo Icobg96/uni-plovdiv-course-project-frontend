@@ -1,0 +1,41 @@
+.new-post-container{
+    .post-content{
+        .user-avatar{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                max-width: 100%;
+            }
+        }
+        .content-block{
+            width: calc(100% - 40px);
+            padding-left: 10px;
+            #new-post-content{
+                display: block;
+                width: 100%;
+                min-height: 60px;
+                border:1px solid $transparent-primary;
+                padding: 10px 20px 20px 20px;
+            }
+            .footer-block{
+                .uploads{
+                    .image{
+                        position: relative;
+                        color: $light-primary;
+                        cursor: pointer;
+                        input{
+                            position: absolute;
+                            left: 0;
+                            width: 100%;
+                            top: 0;
+                            height: 100%;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+#header{
+    padding: 10px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    .logo{
+        font-size: 17px;
+        font-weight: bold;
+        height: 100%;
+    }
+    .search-field{
+        border-radius: 20px;
+        overflow: hidden;
+        max-width: 300px;
+        width: 100%;
+        input{
+            @include transition(all .4s);
+            &:focus{
+                background-color: #fff !important;
+                box-shadow: none;
+            }
+        }
+    }
+    ::placeholder{
+        color: #4A76A8;
+    }
+    .user-profile{
+        .user-notifications{
+            margin-right: 12px;
+            & > div{
+                padding: 0 8px;
+            }
+            .messages{
+                .messages-dropdown{
+                    max-width: 100%;
+                    min-width: 200px;
+                    text-align: left;
+                    .no-messages{
+                        padding: 20px 10px;
+                        text-align: center;
+                        font-size: 13px;
+                        color: $light-gray;
+                    }
+                }
+            }
+            .notifications{
+                .notifications-dropdown{
+                    max-width: 100%;
+                    min-width: 200px;
+                    text-align: left;
+                    .no-notifications{
+                        padding: 20px 10px;
+                        text-align: center;
+                        font-size: 13px;
+                        color: $light-gray;
+                    }
+                }
+            }
+        }
+    }
+    .user-drop-settings{
+        .user-avatar{
+            border-radius: 50%;
+            overflow: hidden;
+            width: 30px;
+            height: 30px;
+            margin:0 8px;
+            img{
+                max-width: 100%;
+            }
+        }
+        .user-name{
+            font-size: 14px;
+        }
+        & > i{
+            font-size: 10px;
+        }
+        .user-links{
+            min-width: 120px;
+            & > .link{
+                display: block;
+                padding: 4px 0;
+                font-size: 14px;
+                letter-spacing: 0;
+                &.bordered-bottom{
+                    border-bottom: 1px solid $transparent-primary;
+                }
+                &:hover{
+                    text-decoration: none;
+                    color: $dark-primary;
+                }
+            }
+        }
+    }
+}
+button, a{
+    &:focus{
+        outline: 0 !important;
+    }
+}

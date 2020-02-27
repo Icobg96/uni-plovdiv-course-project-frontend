@@ -1,0 +1,27 @@
+.cs-dropdown-menu {
+    position: relative;
+  .drop-down-btn {
+    z-index: 1;
+    cursor: pointer;
+  }
+  .cs-dropdown-container {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translateY(20px);
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.1);
+    .cs-dropdown-title{
+        padding: 10px;
+        text-align: center;
+        color: $dark-primary;
+        font-weight: bold;
+        font-size: 14px;
+        border-bottom: 1px solid $transparent-primary;
+    }
+    .cs-dropdown-content{
+        padding: 10px;
+    }
+  }
+}

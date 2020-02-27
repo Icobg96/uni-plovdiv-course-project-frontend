@@ -1,0 +1,24 @@
+$primary: #4A76A8;
+$dark-primary: #224B7A;
+$light-primary: #99B1C6;
+$transparent-primary: #224b7a36;
+$light-gray: #dcdcdc;
+$theme-colors: (
+  "primary": $primary,
+  "dark-primary": $dark-primary,
+  "danger": #DB5046,
+  "transparent" : rgba(0,0,0,0),
+  "transparent-primary": $transparent-primary
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 960px
+);
+@mixin transition($value){
+  transition: $value;
+  -moz-transition: $value;
+  -webkit-transition: $value;
+  -o-transition: $value;
+}
