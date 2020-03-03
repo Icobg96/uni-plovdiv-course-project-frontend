@@ -1,0 +1,175 @@
+.messanger{
+    background: #fff;
+    overflow: hidden;
+    .header{
+        border-bottom: 1px solid $transparent-primary;
+        input{
+            padding: 25px 0;
+        }
+        .back-row{
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .back-btn{
+                cursor: pointer;
+            }
+            .sender-name{
+                color: $dark-primary;
+                font-weight: bold;
+            }
+            .sender-avatar{
+                width: 40px;
+                img{
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .messages-block{
+        .chat-box{
+            &:first-child{
+                a{
+                    border-top: none;
+                }
+            }
+            a{
+                padding: 10px 15px;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid transparent;
+                border-top: 1px solid transparent;
+                cursor: pointer;
+                &:hover{
+                    background: $light-gray;
+                    border-color: #ced4da;
+                }
+            }
+        }
+        .sender-avatar{
+            width: 50px;
+            & > img{
+                border-radius: 50%;
+            }
+        }
+        .message-body{
+            padding: 14px 20px;
+            width: 100%;
+            .sender{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                .name{
+                    color: $dark-primary;
+                    font-weight: bold;
+                }
+                .date{
+                    font-size: 12px;
+                    color: $light-primary;
+                }
+            }
+            .short-message{
+                color: $light-primary;
+                font-size: 14px;
+            }
+        }
+    }
+    .messanger-body{
+        height: calc(100vh - 240px); //footer 70
+        overflow: auto;
+        width: calc(100% + 18px);
+        padding-right: 18px;
+        // width: calc(100% + 10px);
+        .message-block{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 30px 0;
+            &.receiver{
+                justify-content: flex-start;
+                .message{
+                    background: $light-primary;
+                }
+            }
+            &.sender{
+                .message{
+                    flex-direction: row-reverse;
+                    padding: 10px 0px 10px 14px;
+                    border-radius: 20px 0 0 20px;
+                    & > .time{
+                        left: initial;
+                        right: 10px;
+                    }
+                }
+            }
+            .message{
+                position: relative;
+                padding: 10px 14px 10px 0;
+                border-radius: 0 20px 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                background: $dark-primary;
+                color: #fff;
+                max-width: 90%;
+                .user-avatar{
+                    width: 30px;
+                    margin: 0 10px;
+                    img{
+                        border-radius: 50%;
+                    }
+                }
+                .user-message{
+                    word-break: break-all;
+                    width: calc(100% - 50px);
+                }
+                & > .time{
+                    position: absolute;
+                    bottom: -20px;
+                    left: 5px;
+                    font-size: 11px;
+                    color: #ced4da;
+                }
+            }
+        }
+    }
+    .messanger-footer{
+        border-top: 1px solid $transparent-primary;
+        background: $light-gray;
+        padding: 12px 15px;
+        resize: vertical;
+        .drop-down-btn{
+            height: 100%;
+        }
+        .cs-dropdown-container{
+            top: initial;
+            right: initial;
+            left: 0;
+            bottom: 100%;
+            margin-bottom: 22px;
+        }
+        .input-group-text{
+            height: 100%;
+        }
+        .attachments{
+            .attachment{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .image{
+                position: relative;
+                color: $light-primary;
+                cursor: pointer;
+                input{
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    top: 0;
+                    height: 100%;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

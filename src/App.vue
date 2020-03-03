@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderComponent :ass="'asdasdasds'"/>
+    <HeaderComponent/>
     <div id="app-layout" class="container">
       <div class="row">
         <div class="col-md-3">

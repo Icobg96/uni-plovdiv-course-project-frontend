@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Feed from '../views/client/Feed.vue';
+import notFound from '../views/client/404.vue';
+import Messages from '../views/client/Messages.vue';
+import Friends from '../views/client/Friends.vue';
+import Profile from '../views/client/Profile.vue';
 
 Vue.use(VueRouter);
 
@@ -9,6 +13,38 @@ const routes = [
     path: '/',
     name: 'Feed',
     component: Feed,
+  },
+  {
+    path: '/Feeds',
+    name: 'Feeds',
+    component: Feed,
+  },
+  {
+    path: '/messages',
+    name: 'Messages',
+    component: Messages,
+  },
+  {
+    path: '/messages/:sender',
+    name: 'Messages',
+    props: true,
+    component: Messages,
+  },
+  {
+    path: '/friends',
+    name: 'Friends',
+    component: Friends,
+  },
+  {
+    path: '/profile/:user',
+    name: 'Profile',
+    props: true,
+    component: Profile,
+  },
+  {
+    path: '*',
+    name: 'notFound',
+    component: notFound,
   },
   {
     path: '/example',

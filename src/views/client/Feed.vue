@@ -1,5 +1,5 @@
 <template>
-    <div class="page-block">
+    <div class="feed-page">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -26,14 +26,20 @@
                             </div>
                         </div>
                     </div>
+                    <NewsPost/>
+                    <NewsPost :image="true"/>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+import NewsPost from '../../components/client/NewsPost.vue';
 
 export default {
+  components: {
+    NewsPost,
+  },
   name: 'Feed',
 };
 </script>

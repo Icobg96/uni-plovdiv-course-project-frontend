@@ -3,6 +3,9 @@
   .drop-down-btn {
     z-index: 1;
     cursor: pointer;
+    & > div{
+      height: 100%;
+    }
   }
   .cs-dropdown-container {
     position: absolute;

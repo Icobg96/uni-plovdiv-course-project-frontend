@@ -1,0 +1,146 @@
+.profile-page{
+    .page-block{
+        padding: 0;
+    }
+    .avatar-block{
+        padding: 15px !important;
+        .avatar{
+            height: 200px;
+            width: 100%;
+            img{
+                min-width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .actions{
+            button{
+                margin: 10px 0 0 0;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    .friends-block{
+        margin-top: 15px;
+        padding: 15px !important;
+        .counter{
+            color: $dark-primary;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            & > span{
+                color: $light-primary;
+            }
+        }
+        .friends-list{
+            list-style-type: none;
+            padding: 15px 0 0 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                margin: 0 0 10px 0;
+                width: 33.3333%;
+                text-align: center;
+                font-size: 14px;
+                color: $dark-primary;
+                img{
+                    max-width: 40px;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .profile-info-block{
+        padding: 0 !important;
+        .name{
+            padding: 12px;
+            font-size: 17px;
+            font-weight: 500;
+            color: $dark-primary;
+            border-bottom: 1px solid $transparent-primary;
+        }
+        .info{
+            padding: 20px 12px;
+            .info-row{
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                font-size: 14px;
+                .label{
+                    width: 40%;
+                    color: $light-primary;
+                }
+                .data{
+                    width: 50%;
+                }
+            }
+        }
+        .profile-stats{
+            padding: 15px 20px;
+            border-top: 1px solid $transparent-primary;
+            ul{
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                li{
+                    padding: 0 5px;
+                    font-size: 15px;
+                    color: $light-primary;
+                    & > span{
+                        display: block;
+                        font-weight: bold;
+                        font-size: 17px;
+                        text-align: center;
+                        color: $dark-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    .images-block{
+        margin-top: 15px;
+        padding: 15px !important;
+        .header{
+            font-weight: 500;
+            color: $dark-primary;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            & > span{
+                color: $light-primary;
+                font-size: 14px;
+            }
+        }
+        .images-list{
+            ul{
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                overflow: hidden;
+                margin-left: -5px;
+                margin-right: -5px;
+                li{
+                    width: 25%;
+                    height: 100px;
+                    padding:0 5px 5px 5px;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
