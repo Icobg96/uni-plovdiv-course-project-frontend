@@ -41,5 +41,10 @@ export default {
     NewsPost,
   },
   name: 'Feed',
+  mounted() {
+    console.log(this.$store.state.testState);
+    this.$store.commit('setValue', 'new text is hereee');
+    console.log(this.$store.state.testState);
+  },
 };
 </script>

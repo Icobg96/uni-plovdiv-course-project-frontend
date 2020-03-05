@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Welcome from '../views/client/Welcome.vue';
 import Feed from '../views/client/Feed.vue';
 import notFound from '../views/client/404.vue';
 import Messages from '../views/client/Messages.vue';
@@ -11,8 +12,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'Feed',
-    component: Feed,
+    name: 'Welcome',
+    component: Welcome,
   },
   {
     path: '/Feeds',
