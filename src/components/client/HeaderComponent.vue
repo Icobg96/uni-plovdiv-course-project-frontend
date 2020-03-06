@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="logo d-flex align-items-center">
-                        LOGO
+                        <img src="../../assets/images/SN-Logo.png">
                     </div>
                 </div>
                 <div class="col-md-6 text-left">
