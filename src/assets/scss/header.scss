@@ -10,6 +10,9 @@
         font-size: 17px;
         font-weight: bold;
         height: 100%;
+        a{
+            color: #fff;
+        }
     }
     .search-field{
         border-radius: 20px;
@@ -42,7 +45,7 @@
                         padding: 20px 10px;
                         text-align: center;
                         font-size: 13px;
-                        color: $light-gray;
+                        color: $transparent-primary;
                     }
                 }
             }
@@ -55,7 +58,7 @@
                         padding: 20px 10px;
                         text-align: center;
                         font-size: 13px;
-                        color: $light-gray;
+                        color: $transparent-primary;
                     }
                 }
             }

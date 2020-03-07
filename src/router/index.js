@@ -6,6 +6,7 @@ import notFound from '../views/client/404.vue';
 import Messages from '../views/client/Messages.vue';
 import Friends from '../views/client/Friends.vue';
 import Profile from '../views/client/Profile.vue';
+import Library from '../views/client/Library.vue';
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/friends',
     name: 'Friends',
     component: Friends,
+  },
+  {
+    path: '/Library',
+    name: 'Library',
+    component: Library,
   },
   {
     path: '/profile/:user',

@@ -2,10 +2,10 @@
     <div class="news-post">
         <div class="post-header">
             <div class="user-avatar">
-                <img src="../../assets/images/camera_50.png">
+                <img :src="`/images/users/${user.image}`">
             </div>
             <div class="user-info">
-                <span class="name">Ivan Ivanov</span>
+                <span class="name">{{user.name}}</span>
                 <span class="posted-time">24 Dec 2019</span>
             </div>
         </div>
@@ -48,7 +48,7 @@
 <script>
 
 export default {
-  props: ['image'],
+  props: ['image', 'user'],
   name: 'NewsPost',
 };
 </script>

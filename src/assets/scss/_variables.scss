@@ -1,11 +1,15 @@
-$primary: #4A76A8;
-$dark-primary: #224B7A;
-$light-primary: #99B1C6;
+$primary: #49586d;
+$dark-primary: #1f2a37;
+$light-primary: #85909d;
 $transparent-primary: #224b7a36;
+// $grid-columns: 14;
+$grid-gutter-width: 20px;
+// $secondary: $light-primary;
 $light-gray: #f5f7fa;
 $theme-colors: (
   "primary": $primary,
   "dark-primary": $dark-primary,
+  "light-primary": $light-primary,
   "danger": #DB5046,
   "transparent" : rgba(0,0,0,0),
   "transparent-primary": $transparent-primary

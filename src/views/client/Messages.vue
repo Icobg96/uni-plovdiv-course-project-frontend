@@ -15,5 +15,9 @@ export default {
     ChatRoom,
   },
   name: 'Messages',
+  mounted() {
+    this.$store.commit('set_layout', 'left-right-sidebars-layout');
+    this.$store.commit('set_left_sidebar', 'messages-sidebar');
+  },
 };
 </script>

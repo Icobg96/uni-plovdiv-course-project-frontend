@@ -4,7 +4,9 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="logo d-flex align-items-center">
-                        LOGO
+                        <router-link to="/">
+                            Logo
+                        </router-link>
                     </div>
                 </div>
                 <div class="col-md-6 text-left">
@@ -26,7 +28,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 text-right">
-                    <div class="user-profile d-flex align-items-center">
+                    <div class="user-profile d-flex align-items-center justify-content-end">
                         <div
                             class="user-notifications
                                text-white d-flex align-items-center text-dark-primary">
@@ -36,6 +38,12 @@
                                         <div v-if="!notifications" class="no-messages">
                                             There are no new messages.
                                         </div>
+                                    </div>
+                                    <div>
+                                        <router-link to="/messages"
+                                                     class="d-block w-100 btn btn-light-primary">
+                                            Go to messages
+                                        </router-link>
                                     </div>
                                 </DropDown>
                             </div>
@@ -52,17 +60,25 @@
                         </div>
                         <div class="user-drop-settings d-flex align-items-center">
                             <div class="user-name">
-                                Username
+                                me
                             </div>
                             <div class="user-avatar">
                                 <img src="../../assets/images/camera_50.png">
                             </div>
                             <DropDown>
                                 <div class="user-links text-primary text-left">
-                                    <a href="#" class="link bordered-bottom">My profile</a>
-                                    <a href="#" class="link">Edit</a>
-                                    <a href="#" class="link bordered-bottom">Settings</a>
-                                    <a href="#" class="link">Log out</a>
+                                    <router-link class="link bordered-bottom" to="/profile/me">
+                                        My profile
+                                    </router-link>
+                                    <router-link class="link" to="/profile/me/edit">
+                                        Edit
+                                    </router-link>
+                                    <router-link class="link bordered-bottom" to="/setting">
+                                        Settings
+                                    </router-link>
+                                    <router-link class="link" to="/setting">
+                                        Log out
+                                    </router-link>
                                 </div>
                             </DropDown>
                         </div>

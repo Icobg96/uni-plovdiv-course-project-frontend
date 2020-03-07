@@ -2,7 +2,7 @@
     <div>
         <ul>
             <li>
-                <router-link to="/Profile"><i class="fa fa-home"></i> My profile</router-link>
+                <router-link to="/Profile/me"><i class="fa fa-home"></i> My profile</router-link>
             </li>
             <li>
                 <router-link to="/Feeds"><i class="fa fa-address-book"></i> News</router-link>

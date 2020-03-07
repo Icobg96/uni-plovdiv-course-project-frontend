@@ -26,8 +26,12 @@
                             </div>
                         </div>
                     </div>
-                    <NewsPost/>
-                    <NewsPost :image="true"/>
+                    <div class="page-block mb-4">
+                        <NewsPost :user="user"/>
+                    </div>
+                    <div class="page-block">
+                        <NewsPost :user="user" :image="true"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,10 +45,14 @@ export default {
     NewsPost,
   },
   name: 'Feed',
+  data() {
+    return {
+      user: { name: 'me', image: 'camera_50.png' },
+    };
+  },
   mounted() {
-    console.log(this.$store.state.testState);
-    this.$store.commit('setValue', 'new text is hereee');
-    console.log(this.$store.state.testState);
+    this.$store.commit('set_layout', 'left-right-sidebars-layout');
+    this.$store.commit('set_left_sidebar', 'feeds-sidebar');
   },
 };
 </script>
