@@ -51,8 +51,8 @@ export default {
     };
   },
   mounted() {
-    this.$store.commit('set_layout', 'left-right-sidebars-layout');
-    this.$store.commit('set_left_sidebar', 'feeds-sidebar');
+    this.$store.commit('layouts/SET_LAYOUT', 'left-right-sidebars-layout');
+    this.$store.commit('layouts/SET_LEFT_SIDEBAR', 'feeds-sidebar');
   },
 };
 </script>

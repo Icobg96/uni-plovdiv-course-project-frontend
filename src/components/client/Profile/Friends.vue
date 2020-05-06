@@ -23,7 +23,7 @@ export default {
   },
   computed: {
     friends() {
-      return this.$store.getters.users;
+      return this.$store.getters['authentication/users'];
     },
   },
 };

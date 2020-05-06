@@ -11,4 +11,25 @@
             border-bottom: 1px solid $transparent-primary;
         }
     }
+    .documents-explore-list{
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 100%;
+            & > li{
+                padding: 10px 15px;
+
+                display: flex;
+                align-items: center;
+                width: 100%;
+                .icon{
+                    color: $dark-primary;
+                    font-size: 30px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
 }

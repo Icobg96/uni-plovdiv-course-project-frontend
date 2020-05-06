@@ -17,9 +17,11 @@ export default {
     'full-width-layout': FullWidthLayout,
     'left-right-sidebars-layout': LeftRightSidebars,
   },
+  mounted() {
+  },
   computed: {
     layout() {
-      return this.$store.getters.layout;
+      return this.$store.getters['layouts/layout'];
     },
   },
 };

@@ -12,8 +12,8 @@ export default {
     FindFriendsSection,
   },
   mounted() {
-    this.$store.commit('set_layout', 'left-right-sidebars-layout');
-    this.$store.commit('set_left_sidebar', 'friends-sidebar');
+    this.$store.commit('layouts/SET_LAYOUT', 'left-right-sidebars-layout');
+    this.$store.commit('layouts/SET_LEFT_SIDEBAR', 'friends-sidebar');
   },
 };
 </script>

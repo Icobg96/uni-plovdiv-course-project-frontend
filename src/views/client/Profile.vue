@@ -50,11 +50,11 @@ export default {
     return {};
   },
   mounted() {
-    this.$store.commit('set_layout', 'left-sidebar-layout');
+    this.$store.commit('layouts/SET_LAYOUT', 'left-sidebar-layout');
   },
   computed: {
     currentUser() {
-      const curUser = this.$store.getters.users.filter((user) => user.name === this.user);
+      const curUser = this.$store.getters['authentication/users'].filter((user) => user.name === this.user);
       return curUser[0] ? curUser[0] : { name: 'me', image: 'camera_50.png' };
     },
   },

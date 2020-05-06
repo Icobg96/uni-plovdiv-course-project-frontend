@@ -23,7 +23,36 @@
         <div class="documents-explore-list">
             <ul>
               <li>
-                <i class="fa fa-file-alt"></i>
+                <span class="icon">
+                  <i class="fa fa-file"></i>
+                </span>
+                <span class="doc-info">
+                  filename.pdf
+                </span>
+              </li>
+               <li>
+                <span class="icon">
+                  <i class="fa fa-file"></i>
+                </span>
+                <span class="doc-info">
+                  filename.pdf
+                </span>
+              </li>
+               <li>
+                <span class="icon">
+                  <i class="fa fa-file"></i>
+                </span>
+                <span class="doc-info">
+                  filename.pdf
+                </span>
+              </li>
+               <li>
+                <span class="icon">
+                  <i class="fa fa-file"></i>
+                </span>
+                <span class="doc-info">
+                  filename.pdf
+                </span>
               </li>
             </ul>
         </div>
@@ -35,8 +64,8 @@ export default {
   name: 'Friends',
   components: {},
   mounted() {
-    this.$store.commit('set_layout', 'left-right-sidebars-layout');
-    this.$store.commit('set_left_sidebar', 'library-sidebar');
+    this.$store.commit('layouts/SET_LAYOUT', 'left-right-sidebars-layout');
+    this.$store.commit('layouts/SET_LEFT_SIDEBAR', 'library-sidebar');
   },
 };
 </script>

@@ -16,8 +16,8 @@ export default {
   },
   name: 'Messages',
   mounted() {
-    this.$store.commit('set_layout', 'left-right-sidebars-layout');
-    this.$store.commit('set_left_sidebar', 'messages-sidebar');
+    this.$store.commit('layouts/SET_LAYOUT', 'left-right-sidebars-layout');
+    this.$store.commit('layouts/SET_LEFT_SIDEBAR', 'messages-sidebar');
   },
 };
 </script>

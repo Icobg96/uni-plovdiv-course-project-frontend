@@ -14,7 +14,7 @@
 export default {
   name: '404',
   mounted() {
-    this.$store.commit('set_layout', 'full-width-layout');
+    this.$store.commit('layouts/SET_LAYOUT', 'full-width-layout');
   },
 };
 </script>
