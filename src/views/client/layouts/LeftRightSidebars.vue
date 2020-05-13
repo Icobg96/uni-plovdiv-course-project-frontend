@@ -1,12 +1,12 @@
 <template>
     <div id="app-layout" class="container">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
           <nav class="user-left-side-bar">
             <UserSideBar/>
           </nav>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
           <div class="app-content">
             <router-view/>
           </div>
@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     leftSidebar() {
-      return this.$store.state.leftSidebar;
+      return this.$store.state.layouts.leftSidebar;
     },
   },
 };

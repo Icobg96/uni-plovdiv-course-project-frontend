@@ -1,84 +1,111 @@
 <template>
   <div>
       <div class="page-block mb-3 p-4">
+         <div class="text-center mb-4">
+          <h4 class="m-0">Влез в своя профил</h4>
+        </div>
         <form>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-envelope"></i>
+                </span>
+              </div>
+              <input v-model="user.email" type="email" class="form-control"
+                  placeholder="Email">
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-lock"></i>
+                </span>
+              </div>
+              <input v-model="user.password"
+                     type="password"
+                     class="form-control"
+                     placeholder="Парола">
+            </div>
           </div>
           <div class="form-row align-items-center">
             <div class="form-group col-md-4">
-              <button type="submit" class="btn btn-primary">Login</button>
+              <button @click.prevent="login()" type="submit" class="btn btn-primary">Влез</button>
             </div>
             <div class="form-group col-md-8 text-right">
-              <span>Forgot your password?</span>
+              <span>Забравена парола?</span>
             </div>
           </div>
         </form>
       </div>
       <div class="page-block p-4">
         <div class="text-center mb-4">
-          <h4 class="m-0">First time here?</h4>
-          <small>Sign up here</small>
+          <h4 class="m-0">За пръв път сте тук?</h4>
+          <small>Направете своята регистрация тук</small>
         </div>
         <form>
           <div class="form-row">
             <div class="form-group col-md-6">
               <input type="text" class="form-control"
                     id="first_name"
-                    placeholder="First name">
+                    placeholder="Име"
+                    v-model="user.name">
             </div>
             <div class="form-group col-md-6">
               <input type="text" class="form-control"
                     id="last_name"
-                    placeholder="Last name">
+                    placeholder="Фамилия"
+                    v-model="user.surname">
             </div>
           </div>
           <div class="form-group">
             <input type="email" class="form-control"
                    id="email"
-                   placeholder="Email">
+                   placeholder="Email"
+                   v-model="user.email">
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <input type="password" placeholder="Password"
+              <input type="password" placeholder="Парола"
                      class="form-control"
-                     id="password">
+                     id="password"
+                     v-model="user.password">
             </div>
             <div class="form-group col-md-6">
               <input type="repeat_password"
-                     placeholder="Repeat password"
-                     class="form-control" id="repeat_password">
+                     placeholder="Повтори парола"
+                     class="form-control" id="repeat_password"
+                     v-model="user.repeat_password">
             </div>
           </div>
-          <small class="d-block mb-1">Your gender</small>
+          <small class="d-block mb-1">Пол</small>
           <div class="form-row align-items-center mb-4">
               <div class="form-check mr-3">
                 <input class="form-check-input"
                        type="radio"
-                       name="gridRadios"
-                       id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="gridRadios1">
-                  Male
+                       name="Gender"
+                       value="Male"
+                       id="gender-male"
+                       checked
+                       v-model="user.gender">
+                <label class="form-check-label" for="gender-male">
+                  Мъж
                 </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input"
                        type="radio"
-                       name="gridRadios"
-                       id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
-                  Female
+                       name="Gender"
+                       value="Female"
+                       id="gender-female"
+                       v-model="user.gender">
+                <label class="form-check-label" for="gender-female">
+                  Жена
                 </label>
               </div>
           </div>
-          <button type="submit" class="btn btn-primary d-block w-100">Sign in</button>
+          <button type="submit" class="btn btn-primary d-block w-100">Регистрация</button>
         </form>
       </div>
   </div>
@@ -87,5 +114,34 @@
 <script>
 export default {
   name: 'HomeLoginForm',
+  data() {
+    return {
+      user: {
+        email: 'admin@admin.net',
+        name: 'Admin',
+        password: '123123',
+      },
+    };
+  },
+  methods: {
+    login() {
+      this.$store.dispatch('authentication/login', { email: this.user.email, password: this.user.password })
+        .then(() => {
+          this.$router.push({ name: 'Feeds' });
+        })
+        .catch((err) => {
+          console.log(err); //  TO DO: handle error
+        });
+    },
+    register() {
+      this.$store.dispatch('authentication/register', this.user)
+        .then(() => {
+          this.$router.push({ name: 'Feeds' });
+        })
+        .catch((err) => {
+          console.log(err); //  TO DO: handle error
+        });
+    },
+  },
 };
 </script>

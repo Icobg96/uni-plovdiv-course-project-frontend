@@ -1,16 +1,16 @@
 <template>
-    <header id="header" class="bg-primary text-white">
+    <header id="header" class="bg-white text-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <div class="logo d-flex align-items-center">
                         <router-link to="/">
-                            Logo
+                            <img src="../../assets/images/logo.png">
                         </router-link>
                     </div>
                 </div>
-                <div class="col-md-6 text-left">
-                    <div class="search-field bg-dark-primary">
+                <div v-if="loggedIn" class="col-md-6 text-left">
+                    <!-- <div class="search-field bg-dark-primary">
                         <div class="input-group input-group-sm">
                             <div class="input-group-prepend px-1">
                                 <span
@@ -25,9 +25,19 @@
                             aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm">
                         </div>
-                    </div>
+                    </div> -->
+                    <nav class="header-menu">
+                        <ul>
+                            <li @click="setActiveLink($event)" class="header-link active">
+                                <router-link to="/feeds">Дашборд</router-link>
+                            </li>
+                            <li @click="setActiveLink($event)" class="header-link">
+                                <router-link to="/feed">Новини</router-link>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="col-md-3 text-right">
+                <div v-if="loggedIn" class="col-md-3 text-right">
                     <div class="user-profile d-flex align-items-center justify-content-end">
                         <div
                             class="user-notifications
@@ -60,29 +70,44 @@
                         </div>
                         <div class="user-drop-settings d-flex align-items-center">
                             <div class="user-name">
-                                me
+                                {{currentUser.name}}
                             </div>
                             <div class="user-avatar">
                                 <img src="../../assets/images/camera_50.png">
                             </div>
                             <DropDown>
                                 <div class="user-links text-primary text-left">
-                                    <router-link class="link bordered-bottom" to="/profile/me">
-                                        My profile
-                                    </router-link>
-                                    <router-link class="link" to="/profile/me/edit">
-                                        Edit
-                                    </router-link>
-                                    <router-link class="link bordered-bottom" to="/setting">
-                                        Settings
-                                    </router-link>
-                                    <router-link class="link" to="/setting">
-                                        Log out
-                                    </router-link>
+                                    <div class="main-links">
+                                        <router-link class="link" to="/profile/me">
+                                            <i class="fa fa-user"></i> My profile
+                                        </router-link>
+                                        <router-link class="link" to="/profile/me/edit">
+                                            <i class="fa fa-edit"></i> Edit
+                                        </router-link>
+                                        <router-link class="link" to="/setting">
+                                            <i class="fa fa-wrench"></i> Settings
+                                        </router-link>
+                                    </div>
+                                    <div class="footer">
+                                        <div @click="logOut()"
+                                                     class="link logout"
+                                                     to="/setting">
+                                            <i class="fa fa-power-off"></i> Log out
+                                        </div>
+                                    </div>
                                 </div>
                             </DropDown>
                         </div>
                     </div>
+                </div>
+                <div v-else class="col-md-9 text-right">
+                    <nav class="header-menu">
+                        <ul>
+                            <li class="header-link">
+                                <router-link to="/about">За нас</router-link>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -91,6 +116,7 @@
 
 <script>
 import DropDown from '@/components/client/DropDown.vue';
+import authComputed from '@/store/helpers';
 
 export default {
   name: 'HeaderComponent',
@@ -101,6 +127,22 @@ export default {
     return {
       notifications: false,
     };
+  },
+  computed: {
+    ...authComputed,
+  },
+  methods: {
+    logOut() {
+      this.$store.dispatch('authentication/logOut');
+    },
+    setActiveLink(e) {
+      const currentElement = e.target.parentNode;
+      const allElements = e.target.parentNode.parentNode.childNodes;
+      allElements.forEach((element) => {
+        element.classList.remove('active');
+      });
+      currentElement.classList.add('active');
+    },
   },
 };
 </script>

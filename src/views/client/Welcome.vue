@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-md-7">
-                <WelcomeSection/>
-            </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <HomeLoginForm/>
+            </div>
+             <div class="col-md-8">
+                <WelcomeSection/>
             </div>
         </div>
     </div>

@@ -50,7 +50,7 @@ export default {
       user: { name: 'me', image: 'camera_50.png' },
     };
   },
-  mounted() {
+  created() {
     this.$store.commit('layouts/SET_LAYOUT', 'left-right-sidebars-layout');
     this.$store.commit('layouts/SET_LEFT_SIDEBAR', 'feeds-sidebar');
   },

@@ -36,6 +36,9 @@ const getters = {
   users(state) {
     return state.users;
   },
+  user(state) {
+    return state.user;
+  },
 };
 
 const mutations = {
@@ -61,13 +64,19 @@ const actions = {
       });
   },
   login(context, user) {
-    axios.post('/login', user)
-      .then((data) => {
-        context.commit('SET_USER_DATA', data.user);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // axios.post('/login', user)
+    //   .then((data) => {
+    //     context.commit('SET_USER_DATA', data.user);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    //  for testing
+    if (user.email && user.password) {
+      context.commit('SET_USER_DATA', user);
+    } else {
+      alert('Error');
+    }
   },
   logOut(context) {
     context.commit('UNAUTHORIZE');

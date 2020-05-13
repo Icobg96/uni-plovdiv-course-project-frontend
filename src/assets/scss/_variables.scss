@@ -1,9 +1,9 @@
 $primary: #49586d;
 $dark-primary: #1f2a37;
-$light-primary: #85909d;
-$transparent-primary: #224b7a36;
+$light-primary: rgba(#49586d, 0.7);
+$transparent-primary: rgba(#49586d, 0.2);
 // $grid-columns: 14;
-$grid-gutter-width: 20px;
+$grid-gutter-width: 15px;
 // $secondary: $light-primary;
 $light-gray: #f5f7fa;
 $theme-colors: (
@@ -18,11 +18,16 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 960px
+  xl: 1160px
 );
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @mixin transition($value){
   transition: $value;
   -moz-transition: $value;
   -webkit-transition: $value;
   -o-transition: $value;
+}
+.input-group-text{
+  min-width: 45px;
+  justify-content: center;
 }

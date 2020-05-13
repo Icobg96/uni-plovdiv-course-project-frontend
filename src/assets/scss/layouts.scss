@@ -2,12 +2,21 @@ body{
     background-color: #EDEEF0 !important;
     padding: 0 !important;
     margin: 0 !important;
+    font-family: 'Nunito', sans-serif !important;
+}
+#app{
+    &.Welcome{
+        background-image: url('../images/wave-background.png');
+        background-position: left bottom;
+        background-size: auto;
+        background-repeat: no-repeat;
+    }
 }
 #app-layout{
     width: 100%;
-    margin: 60px auto 0;
-    max-width: 960px;
-    min-height: 100vh;
+    margin: 120px auto 0;
+    max-width: 1160px;
+    min-height: calc(100vh - 80px);
     padding-top: 20px;
     .page-block{
         background-color: #fff;
