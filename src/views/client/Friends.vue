@@ -1,5 +1,5 @@
 <template>
-    <div class="page-block p-0 friends-page">
+    <div class="section-block p-0 friends-page">
         <FindFriendsSection />
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div class="page-block p-0">
+    <div class="section-block p-0">
         <ChatRoom :sender="sender" v-if="sender" />
         <AllMessages v-else/>
     </div>

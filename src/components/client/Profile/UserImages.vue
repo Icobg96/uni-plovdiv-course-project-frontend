@@ -8,7 +8,7 @@
             <div class="images-list">
                 <ul>
                     <li>
-                        <img src="@/assets/images/camera_50.png">
+                        <img src="@/assets/images/users/avatar-4.jpg">
                     </li>
                     <li>
                         <img src="@/assets/images/camera_50.png">

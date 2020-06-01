@@ -17,7 +17,7 @@
         <div class="messages-block">
             <div v-for="(message, index) in messages" :key="index" class="chat-box">
                 <router-link :to="'/messages/' + message.sender">
-                    <div class="sender-avatar">
+                    <div class="user-avatar icon-45">
                         <img src="../../../assets/images/camera_50.png">
                     </div>
                     <div class="message-body">

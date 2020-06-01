@@ -2,7 +2,7 @@
     <div id="app-layout" class="container">
       <div class="row">
         <div class="col-md-3">
-          <nav class="user-left-side-bar">
+          <nav class="user-left-side-bar section-block">
             <UserSideBar/>
           </nav>
         </div>
@@ -11,7 +11,7 @@
             <router-view/>
           </div>
         </div>
-        <div class="col-md-2">
+        <div v-if="currentUser" class="col-md-2">
             <component :is="leftSidebar" />
         </div>
       </div>
@@ -37,6 +37,9 @@ export default {
   computed: {
     leftSidebar() {
       return this.$store.state.layouts.leftSidebar;
+    },
+    currentUser() {
+      return this.$store.getters['authentication/user'];
     },
   },
 };

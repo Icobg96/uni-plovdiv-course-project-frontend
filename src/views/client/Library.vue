@@ -1,5 +1,5 @@
 <template>
-    <div class="page-block p-0 library-page">
+    <div class="section-block p-0 library-page">
         <div class="header">
             <div class="heading">
                 Find documents

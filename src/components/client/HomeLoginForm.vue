@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="page-block mb-3 p-4">
+      <div class="section-block mb-3 p-4">
          <div class="text-center mb-4">
           <h4 class="m-0">Влез в своя профил</h4>
         </div>
@@ -39,7 +39,7 @@
           </div>
         </form>
       </div>
-      <div class="page-block p-4">
+      <div class="section-block p-4">
         <div class="text-center mb-4">
           <h4 class="m-0">За пръв път сте тук?</h4>
           <small>Направете своята регистрация тук</small>
@@ -125,7 +125,7 @@ export default {
   },
   methods: {
     login() {
-      this.$store.dispatch('authentication/login', { email: this.user.email, password: this.user.password })
+      this.$store.dispatch('authentication/login', this.user)
         .then(() => {
           this.$router.push({ name: 'Feeds' });
         })

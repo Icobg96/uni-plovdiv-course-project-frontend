@@ -1,5 +1,5 @@
 <template>
-    <div class="right-sidebar friends-sidebar page-block p-0">
+    <div class="right-sidebar friends-sidebar section-block p-0">
         <ul>
             <li @click="toggleActive($event)">
                 <router-link to="">

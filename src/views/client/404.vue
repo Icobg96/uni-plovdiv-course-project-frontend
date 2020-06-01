@@ -1,5 +1,5 @@
 <template>
-    <div class="page-block">
+    <div class="section-block">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

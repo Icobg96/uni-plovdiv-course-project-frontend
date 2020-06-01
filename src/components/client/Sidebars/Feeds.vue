@@ -1,5 +1,5 @@
 <template>
-    <div class="right-sidebar feeds-sidebar page-block p-0">
+    <div class="right-sidebar feeds-sidebar section-block p-0">
         <ul>
             <li>
                 <router-link active-class="active" to="/Feeds">

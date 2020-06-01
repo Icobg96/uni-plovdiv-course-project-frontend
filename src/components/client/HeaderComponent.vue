@@ -4,8 +4,11 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="logo d-flex align-items-center">
-                        <router-link to="/">
-                            <img src="../../assets/images/logo.png">
+                        <router-link v-if="!currentUser" to="/">
+                            <img src="@/assets/images/logo.png">
+                        </router-link>
+                        <router-link v-else to="/feeds">
+                            <img src="@/assets/images/logo.png">
                         </router-link>
                     </div>
                 </div>
@@ -29,10 +32,13 @@
                     <nav class="header-menu">
                         <ul>
                             <li @click="setActiveLink($event)" class="header-link active">
-                                <router-link to="/feeds">Дашборд</router-link>
+                                <router-link to="/dashboard">Дашборд</router-link>
                             </li>
                             <li @click="setActiveLink($event)" class="header-link">
-                                <router-link to="/feed">Новини</router-link>
+                                <router-link to="/feeds">Новини</router-link>
+                            </li>
+                            <li @click="setActiveLink($event)" class="header-link">
+                                <router-link to="/library">Библиотека</router-link>
                             </li>
                         </ul>
                     </nav>
@@ -72,8 +78,8 @@
                             <div class="user-name">
                                 {{currentUser.name}}
                             </div>
-                            <div class="user-avatar">
-                                <img src="../../assets/images/camera_50.png">
+                            <div class="user-avatar icon">
+                                <img src="../../assets/images/users/avatar-4.jpg">
                             </div>
                             <DropDown>
                                 <div class="user-links text-primary text-left">

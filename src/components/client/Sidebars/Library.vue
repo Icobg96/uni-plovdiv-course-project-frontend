@@ -1,9 +1,9 @@
 <template>
-    <div class="right-sidebar library-sidebar page-block p-0">
+    <div class="right-sidebar library-sidebar section-block p-0">
         <ul>
             <li @click="toggleActive($event)">
                 <router-link active-class="active" to="/library">
-                    All documents
+                    Всички категории
                 </router-link>
             </li>
             <li @click="toggleActive($event)">

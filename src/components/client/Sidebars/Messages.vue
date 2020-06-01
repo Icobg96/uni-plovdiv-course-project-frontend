@@ -1,5 +1,5 @@
 <template>
-    <div class="right-sidebar messages-sidebar page-block p-0">
+    <div class="right-sidebar messages-sidebar section-block p-0">
         <ul>
             <li>
                 <router-link active-class="active" to="/Messages">
