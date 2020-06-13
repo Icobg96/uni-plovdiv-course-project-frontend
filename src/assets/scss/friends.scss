@@ -50,6 +50,9 @@
                             cursor: pointer;
                             color: $light-primary;
                         }
+                        &:hover{
+                            opacity: 0.7;
+                        }
                     }
                 }
             }

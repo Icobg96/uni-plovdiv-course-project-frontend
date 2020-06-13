@@ -3,17 +3,17 @@
         <ul>
             <li @click="toggleActive($event)">
                 <router-link active-class="active" to="/library">
-                    All documents
+                    All
                 </router-link>
             </li>
             <li @click="toggleActive($event)">
                 <router-link to="">
-                    Category 1
+                    Folders
                 </router-link>
             </li>
             <li @click="toggleActive($event)">
                 <router-link to="">
-                    Category 2
+                    Files
                 </router-link>
             </li>
         </ul>

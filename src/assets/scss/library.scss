@@ -6,29 +6,66 @@
             color: $dark-primary;
             padding: 10px 15px;
         }
-        .search-friends{
+        .search-files{
             padding: 10px 10px;
             border-bottom: 1px solid $transparent-primary;
         }
     }
+    .suggesting-file-list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 20px 0px 20px 20px;
+        background: #f5f7fa;
+        .file-box{
+            width: calc(33.33% - 20px);
+             margin-right: 20px;
+             background: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+            border-radius: .5rem;        
+                       .file{
+                padding: 10px;
+            }
+            .file-title{
+                color: $dark-primary;
+                padding: 15px 15px 15px 10px;
+            }
+            .file-icon img {
+                max-height: 50px;
+            }
+           
+        }
+    }
     .documents-explore-list{
-        ul{
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: block;
-            width: 100%;
-            & > li{
-                padding: 10px 15px;
-
-                display: flex;
-                align-items: center;
-                width: 100%;
-                .icon{
-                    color: $dark-primary;
-                    font-size: 30px;
-                    margin-right: 10px;
-                }
+        .table th, .table td {
+            vertical-align: middle;
+            border-bottom: 1px solid #dee2e6;
+        }
+        img{
+         max-height: 30px;
+        }
+        .file-title{
+            padding: 5px 0 0 10px;
+        }
+        .file-details:hover .details{
+            opacity: 1;
+        }
+        .file-details:hover {
+            -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+        }
+        .details{
+            opacity: 0;
+            i{
+                font-size: 20px;
+                padding: 10px;
+            }
+            .fa.fa-edit {
+                color: #4278f1;
+            }
+            .fa.fa-trash {
+                color: #f15642;
             }
         }
     }
