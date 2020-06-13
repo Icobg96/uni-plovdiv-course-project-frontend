@@ -1,14 +1,23 @@
 <template>
-    <header id="header" class="bg-primary text-white">
+    <header id="header" class="bg-white text-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
                     <div class="logo d-flex align-items-center">
+<<<<<<< HEAD
                         <img src="../../assets/images/SN-Logo.png">
+=======
+                        <router-link v-if="!currentUser" to="/">
+                            <img src="@/assets/images/logo.png">
+                        </router-link>
+                        <router-link v-else to="/feeds">
+                            <img src="@/assets/images/logo.png">
+                        </router-link>
+>>>>>>> f50984795ea7c763a011e7d7e945f51a3cc33033
                     </div>
                 </div>
-                <div class="col-md-6 text-left">
-                    <div class="search-field bg-dark-primary">
+                <div v-if="loggedIn" class="col-md-6 text-left">
+                    <!-- <div class="search-field bg-dark-primary">
                         <div class="input-group input-group-sm">
                             <div class="input-group-prepend px-1">
                                 <span
@@ -23,10 +32,23 @@
                             aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-sm">
                         </div>
-                    </div>
+                    </div> -->
+                    <nav class="header-menu">
+                        <ul>
+                            <li @click="setActiveLink($event)" class="header-link active">
+                                <router-link to="/dashboard">Дашборд</router-link>
+                            </li>
+                            <li @click="setActiveLink($event)" class="header-link">
+                                <router-link to="/feeds">Новини</router-link>
+                            </li>
+                            <li @click="setActiveLink($event)" class="header-link">
+                                <router-link to="/library">Библиотека</router-link>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="col-md-3 text-right">
-                    <div class="user-profile d-flex align-items-center">
+                <div v-if="loggedIn" class="col-md-3 text-right">
+                    <div class="user-profile d-flex align-items-center justify-content-end">
                         <div
                             class="user-notifications
                                text-white d-flex align-items-center text-dark-primary">
@@ -36,6 +58,12 @@
                                         <div v-if="!notifications" class="no-messages">
                                             There are no new messages.
                                         </div>
+                                    </div>
+                                    <div>
+                                        <router-link to="/messages"
+                                                     class="d-block w-100 btn btn-light-primary">
+                                            Go to messages
+                                        </router-link>
                                     </div>
                                 </DropDown>
                             </div>
@@ -52,21 +80,44 @@
                         </div>
                         <div class="user-drop-settings d-flex align-items-center">
                             <div class="user-name">
-                                Username
+                                {{currentUser.name}}
                             </div>
-                            <div class="user-avatar">
-                                <img src="../../assets/images/camera_50.png">
+                            <div class="user-avatar icon">
+                                <img src="../../assets/images/users/avatar-4.jpg">
                             </div>
                             <DropDown>
                                 <div class="user-links text-primary text-left">
-                                    <a href="#" class="link bordered-bottom">My profile</a>
-                                    <a href="#" class="link">Edit</a>
-                                    <a href="#" class="link bordered-bottom">Settings</a>
-                                    <a href="#" class="link">Log out</a>
+                                    <div class="main-links">
+                                        <router-link class="link" to="/profile/me">
+                                            <i class="fa fa-user"></i> My profile
+                                        </router-link>
+                                        <router-link class="link" to="/profile/me/edit">
+                                            <i class="fa fa-edit"></i> Edit
+                                        </router-link>
+                                        <router-link class="link" to="/setting">
+                                            <i class="fa fa-wrench"></i> Settings
+                                        </router-link>
+                                    </div>
+                                    <div class="footer">
+                                        <div @click="logOut()"
+                                                     class="link logout"
+                                                     to="/setting">
+                                            <i class="fa fa-power-off"></i> Log out
+                                        </div>
+                                    </div>
                                 </div>
                             </DropDown>
                         </div>
                     </div>
+                </div>
+                <div v-else class="col-md-9 text-right">
+                    <nav class="header-menu">
+                        <ul>
+                            <li class="header-link">
+                                <router-link to="/about">За нас</router-link>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -75,6 +126,7 @@
 
 <script>
 import DropDown from '@/components/client/DropDown.vue';
+import authComputed from '@/store/helpers';
 
 export default {
   name: 'HeaderComponent',
@@ -85,6 +137,22 @@ export default {
     return {
       notifications: false,
     };
+  },
+  computed: {
+    ...authComputed,
+  },
+  methods: {
+    logOut() {
+      this.$store.dispatch('authentication/logOut');
+    },
+    setActiveLink(e) {
+      const currentElement = e.target.parentNode;
+      const allElements = e.target.parentNode.parentNode.childNodes;
+      allElements.forEach((element) => {
+        element.classList.remove('active');
+      });
+      currentElement.classList.add('active');
+    },
   },
 };
 </script>

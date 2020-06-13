@@ -2,18 +2,37 @@ body{
     background-color: #EDEEF0 !important;
     padding: 0 !important;
     margin: 0 !important;
+    font-family: 'Nunito', sans-serif !important;
+}
+#app{
+    &.Welcome{
+        background-image: url('../images/wave-background.png');
+        background-position: left bottom;
+        background-size: auto;
+        background-repeat: no-repeat;
+    }
 }
 #app-layout{
     width: 100%;
-    margin: 60px auto 0;
-    max-width: 960px;
-    min-height: 100vh;
+    margin: 120px auto 0;
+    max-width: 1160px;
+    min-height: calc(100vh - 80px);
     padding-top: 20px;
-    .page-block{
-        background-color: #fff;
-        padding: 20px 0px;
-        border-radius: 4px;
-        border: 1px solid $transparent-primary;
+}
+.app-content{
+    padding-bottom: 50px;
+}
+.section-block{
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid $transparent-primary;
+    .header{
+        .heading{
+            background: #f5f7fa;
+            border-bottom: 1px solid rgba(73, 88, 109, 0.2);
+            color: #1f2a37;
+            padding: 10px 15px;
+        }
     }
 }
 input{

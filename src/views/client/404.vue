@@ -1,5 +1,5 @@
 <template>
-    <div class="page-block">
+    <div class="section-block">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -13,5 +13,8 @@
 
 export default {
   name: '404',
+  mounted() {
+    this.$store.commit('layouts/SET_LAYOUT', 'full-width-layout');
+  },
 };
 </script>

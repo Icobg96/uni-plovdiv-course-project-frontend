@@ -1,5 +1,5 @@
 <template>
-    <div class="page-block p-0">
+    <div class="section-block p-0">
         <ChatRoom :sender="sender" v-if="sender" />
         <AllMessages v-else/>
     </div>
@@ -15,5 +15,9 @@ export default {
     ChatRoom,
   },
   name: 'Messages',
+  mounted() {
+    this.$store.commit('layouts/SET_LAYOUT', 'left-right-sidebars-layout');
+    this.$store.commit('layouts/SET_LEFT_SIDEBAR', 'messages-sidebar');
+  },
 };
 </script>

@@ -10,15 +10,15 @@
                 <div class="sender-name">
                     {{sender}}
                 </div>
-                <div class="sender-avatar">
-                    <img src="../../../assets/images/camera_50.png">
+                <div class="user-avatar icon-45">
+                    <img src="@/assets/images/users/avatar-4.jpg">
                 </div>
             </div>
         </template>
         <div class="message-block receiver">
             <div class="message">
                 <span class="time">10:20pm</span>
-                <div class="user-avatar">
+                <div class="user-avatar icon-45">
                     <img src="../../../assets/images/camera_50.png">
                 </div>
                 <div class="user-message">
@@ -32,7 +32,7 @@
              class="message-block sender">
             <div class="message">
                 <span class="time">{{senderMessage.time}}</span>
-                <div class="user-avatar">
+                <div class="user-avatar icon-45">
                     <img src="../../../assets/images/camera_50.png">
                 </div>
                 <div class="user-message">

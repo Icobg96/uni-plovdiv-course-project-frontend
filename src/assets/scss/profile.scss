@@ -1,5 +1,5 @@
 .profile-page{
-    .page-block{
+    .section-block{
         padding: 0;
     }
     .avatar-block{
@@ -22,7 +22,6 @@
         }
     }
     .friends-block{
-        margin-top: 15px;
         padding: 15px !important;
         .counter{
             color: $dark-primary;
@@ -46,15 +45,22 @@
                 text-align: center;
                 font-size: 14px;
                 color: $dark-primary;
+                line-height: normal;
+                span{
+                    display: block;
+                    line-height: 14px;
+                }
                 img{
-                    max-width: 40px;
+                    width: 50px;
                     margin: 0 auto;
                     border-radius: 50%;
+                    height: 50px;
+                    object-fit: cover;
                 }
             }
         }
     }
-    .profile-info-block{
+    .profile-personal-info-block{
         padding: 0 !important;
         .name{
             padding: 12px;
@@ -76,6 +82,14 @@
                 }
                 .data{
                     width: 50%;
+                }
+                &.heading{
+                    border-bottom: 1px solid $transparent-primary;
+                    margin: 15px 0 5px 0;
+                    padding-bottom: 4px;
+                    .label{
+                        color: $primary;
+                    }
                 }
             }
         }
@@ -141,6 +155,13 @@
                     }
                 }
             }
+        }
+    }
+    .user-posts{
+        & > .header{
+            background: #f5f7fa;
+            border-bottom: 1px solid $transparent-primary;
+            padding: 15px;
         }
     }
 }

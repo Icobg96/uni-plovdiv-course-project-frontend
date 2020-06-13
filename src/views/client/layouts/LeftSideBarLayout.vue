@@ -2,7 +2,7 @@
     <div id="app-layout" class="container">
       <div class="row">
         <div class="col-md-3">
-          <nav class="user-left-side-bar">
+          <nav class="user-left-side-bar section-block">
             <UserSideBar/>
           </nav>
         </div>

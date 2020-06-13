@@ -20,11 +20,11 @@
             </div>
         </div>
         <div class="suggesting-friends-list">
-            <div v-for="(friend, index) in friendsSuggestions" :key="index" class="friend-box">
+            <div v-for="(friend, index) in friends" :key="index" class="friend-box">
                 <router-link :to="'/profile/'+friend.name">
                 <div class="friend">
                     <div class="friend-avatar">
-                        <img src="../../../assets/images/camera_50.png">
+                        <img :src="`/images/users/${friend.image}`">
                     </div>
                     <div class="friend-info">
                         <div class="info">
@@ -48,34 +48,12 @@
 <script>
 export default {
   data() {
-    return {
-      friendsSuggestions: [
-        {
-          name: 'Ivan Dimitrov',
-        },
-        {
-          name: 'Dimitur Ivanov',
-        },
-        {
-          name: 'Ivan Dimitrov',
-        },
-        {
-          name: 'Ivan Dimitrov',
-        },
-        {
-          name: 'Ivan Dimitrov',
-        },
-        {
-          name: 'Dimitur Ivanov',
-        },
-        {
-          name: 'Ivan Dimitrov',
-        },
-        {
-          name: 'Ivan Dimitrov',
-        },
-      ],
-    };
+    return {};
+  },
+  computed: {
+    friends() {
+      return this.$store.getters['authentication/users'];
+    },
   },
 };
 </script>

@@ -1,27 +1,96 @@
 .user-left-side-bar{
+    .user{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba($primary, 0.1);
+        .user-avatar{
+            width: 100px;
+            height: 100px;
+        }
+        .user-name{
+            margin-top: 10px;
+            font-size: 17px;
+        }
+        .user-info{
+            font-size: 14px;
+            margin-top: 0px;
+            text-align: center;
+        }
+        .actions{
+            margin-top: 12px;
+            a{
+                font-size: 13px;
+            }
+        }
+    }
     ul{
         margin: 0;
         padding: 0;
         list-style-type: none;
         li{
-            color: $primary;
+            // color: $primary;
             padding: 6px 0;
-            &:first-child{
-                padding-top: 0px;
+            border-left: 3px solid transparent;
+            &.active{
+                border-color: $primary;
+                background: rgba($primary, 0.1);
+                a{
+                    color: $dark-primary;
+                    opacity: 1;
+                    i{
+                        color: $dark-primary;
+                    }
+                }
             }
             a{
                 @include transition(all .4s);
+                display: block;
+                padding: 10px 14px;
+                opacity: 0.9;
                 &:hover{
                     text-decoration: none;
                     color: $dark-primary;
+                    opacity: 1;
                     i{
                         color: $dark-primary;
                     }
                 }
                 i{
                     @include transition(all .4s);
-                    margin-right: 5px;
-                    color: $light-primary;
+                    margin-right: 8px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+//right sidebars
+.right-sidebar{
+    & > ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li{
+            display: block;
+            width: 100%;
+            a{
+                display: block;
+                padding: 8px 14px;
+                color: $primary;
+                border-left: 2px solid transparent;
+                font-weight: 400;
+                font-size: 14px;
+                &:hover{
+                    color: $dark-primary;
+                    background: $transparent-primary;
+                }
+                &.active{
+                    color: $dark-primary;
+                    background: $transparent-primary;
+                    border-color: $dark-primary;
                 }
             }
         }
