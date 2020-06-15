@@ -4,12 +4,16 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="logo d-flex align-items-center">
+<<<<<<< HEAD
+                        <img src="../../assets/images/SN-Logo.png">
+=======
                         <router-link v-if="!currentUser" to="/">
                             <img src="@/assets/images/logo.png">
                         </router-link>
                         <router-link v-else to="/feeds">
                             <img src="@/assets/images/logo.png">
                         </router-link>
+>>>>>>> f50984795ea7c763a011e7d7e945f51a3cc33033
                     </div>
                 </div>
                 <div v-if="loggedIn" class="col-md-6 text-left">
