@@ -59,7 +59,7 @@
                 </div>
                 <input v-model="currentMessage"
                        type="text" class="form-control"
-                       placeholder="Write a message"
+                       placeholder="Напиши съобщение.."
                        aria-label="Write a message"
                        aria-describedby="send-chat-message">
                 <div class="input-group-append">
@@ -67,7 +67,7 @@
                             class="btn btn-primary"
                             type="button"
                             id="send-chat-message">
-                        SEND
+                        Изпрати
                     </button>
                 </div>
             </div>

@@ -7,26 +7,26 @@
             <div class="info flex-grow-1">
                 <div class="info-row">
                     <div class="label">
-                        Birthday:
+                        Дата на раждане:
                     </div>
                     <div class="data">
-                        April 9, 1996
+                        9 Април, 1996
                     </div>
                 </div>
                 <div class="info-row">
                     <div class="label">
-                        Current city:
+                        Местоживеене:
                     </div>
                     <div class="data">
-                        Plovdiv
+                        Пловдив
                     </div>
                 </div>
                 <div class="info-row">
                     <div class="label">
-                        University:
+                        Университет:
                     </div>
                     <div class="data">
-                        Plovdiv University
+                        Пловдивски университет "Паисий Хилендарски"
                     </div>
                 </div>
             </div>

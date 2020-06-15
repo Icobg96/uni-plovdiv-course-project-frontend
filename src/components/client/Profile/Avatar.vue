@@ -7,8 +7,10 @@
             <button class="btn btn-primary">Edit profile</button>
         </div>
         <div v-else class="actions">
-            <button class="btn btn-primary">Write message</button>
-            <button class="btn btn-primary">Add friend</button>
+            <button class="btn btn-primary">Напиши съобщение
+              <i class="fa fa-comments ml-2"></i>
+            </button>
+            <!-- <button class="btn btn-primary">Add friend</button> -->
         </div>
     </div>
 </template>

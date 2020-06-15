@@ -8,7 +8,7 @@
                         <i class="fa fa-search"></i>
                     </span>
                 </div>
-                <input type="text" placeholder="Search.."
+                <input type="text" placeholder="Търсене.."
                        aria-label="Sizing example input"
                        aria-describedby="inputGroup-sizing-sm"
                        class="form-control bg-transparent border-0 text-primary">
