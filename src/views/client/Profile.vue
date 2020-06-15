@@ -3,29 +3,77 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="section-block p-0">
-                    <Avatar :user="currentUser"/>
-                </div>
-                <div class="section-block p-0 mt-3">
-                    <Friends />
+                    <Avatar :user="currentUserProfile"/>
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="section-block p-0">
-                    <PersonalUserInfo :user="currentUser" />
+                <div class="section-block p-0 h-100">
+                    <PersonalUserInfo :user="currentUserProfile" />
                 </div>
-                <div class="section-block p-0 mt-3">
-                    <UserImages :user="currentUser" />
-                </div>
-                <div class="section-block user-posts mt-3 pt-0">
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <Tabs containerClass="user-profile-tabs-container">
+               <Tab :activeTab="true" title="<i class='fa fa-address-book'></i> Дневник">
+                  <div class="container content-block p-0">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="section-block p-0">
+                          <Friends :actions="false" />
+                        </div>
+                        <div class="section-block p-0 mt-3">
+                          <UserImages :actions="false" :user="currentUserProfile" />
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div v-if="isCurrentUser" class="user-posts p-0">
+                          <PublishPostSection/>
+                        </div>
+                        <div class="section-block user-posts pt-0">
+                            <div v-for="(post, index) in posts" :key="index"
+                                 class="posts-container">
+                                <NewsPost :post="post"/>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </Tab>
+              <Tab title="<i class='fa fa-users'></i> Приятели(6)">
+                  <div class="content-block">
+                    <div class="section-block user-profile-friends p-0 mt-3">
+                        <Friends />
+                    </div>
+                  </div>
+              </Tab>
+              <Tab title="<i class='fa fa-image'></i> Снимки(4)">
+                  <div class="content-block">
+                    <div class="section-block user-profile-images p-0 mt-3">
+                        <UserImages :user="currentUserProfile" />
+                    </div>
+                  </div>
+              </Tab>
+              <Tab title="<i class='fa fa-file'></i> Материали(10)">
+                  <div class="content-block">
+                      Всички Материали тук
+                  </div>
+              </Tab>
+            </Tabs>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-md-12">
+              <div class="section-block user-posts mt-3 pt-0">
                     <div class="header">
-                        {{currentUser.name}}'s posts
+                        Постове на {{currentUser.name}}
                     </div>
                     <div v-for="(post, index) in posts" :key="index" class="posts-container">
                         <NewsPost :post="post"/>
                     </div>
                 </div>
-            </div>
-        </div>
+          </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -34,6 +82,10 @@ import Avatar from '@/components/client/Profile/Avatar.vue';
 import PersonalUserInfo from '@/components/client/Profile/PersonalUserInfo.vue';
 import UserImages from '@/components/client/Profile/UserImages.vue';
 import Friends from '@/components/client/Profile/Friends.vue';
+import Tabs from '@/components/client/Tabs/Tabs.vue';
+import Tab from '@/components/client/Tabs/Tab.vue';
+import PublishPostSection from '@/components/client/Post/PublishPostSection.vue';
+import authComputed from '@/store/helpers';
 
 export default {
   props: ['user'],
@@ -42,8 +94,11 @@ export default {
     NewsPost,
     Avatar,
     PersonalUserInfo,
+    Tabs,
+    Tab,
     UserImages,
     Friends,
+    PublishPostSection,
   },
   data() {
     return {
@@ -73,9 +128,16 @@ export default {
     this.$store.commit('layouts/SET_LAYOUT', 'left-sidebar-layout');
   },
   computed: {
-    currentUser() {
-      const curUser = this.$store.getters['authentication/users'].filter((user) => user.name === this.user);
-      return curUser[0] ? curUser[0] : { name: 'me', image: 'avatar-4.jpg' };
+    ...authComputed,
+    currentUserProfile() {
+      if (this.$route.path.toLowerCase() === '/profile/me') {
+        return this.currentUser;
+      }
+      const current = this.users.filter((user) => user.name === this.user)[0];
+      return current;
+    },
+    isCurrentUser() {
+      return this.$route.params.user === 'me';
     },
   },
 };

@@ -3,12 +3,12 @@
         <ul>
             <li>
                 <router-link active-class="active" to="/Messages">
-                    All messages
+                    Всички
                 </router-link>
             </li>
             <li>
                 <router-link to="/Messages">
-                    Unread
+                    Непрочетени
                 </router-link>
             </li>
         </ul>

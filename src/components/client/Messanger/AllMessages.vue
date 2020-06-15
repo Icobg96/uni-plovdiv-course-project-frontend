@@ -18,7 +18,7 @@
             <div v-for="(message, index) in messages" :key="index" class="chat-box">
                 <router-link :to="'/messages/' + message.sender">
                     <div class="user-avatar icon-45">
-                        <img src="../../../assets/images/camera_50.png">
+                        <img :src="`/images/users/${message.avatar}`">
                     </div>
                     <div class="message-body">
                         <div class="sender">
@@ -35,6 +35,7 @@
     </messanger>
 </template>
 <script>
+import authComputed from '@/store/helpers';
 import Messanger from './Messanger.vue';
 
 export default {
@@ -43,18 +44,24 @@ export default {
     Messanger,
   },
   data() {
-    return {
-      messages: [{
-        sender: 'Ivan',
+    return {};
+  },
+  computed: {
+    ...authComputed,
+    messages() {
+      return [{
+        sender: this.users[0].name,
         shortMessage: 'Lorem Ipsum is simply dummy text of the printing and typesey..',
         date: '2:30 pm',
+        avatar: this.users[0].image,
       },
       {
-        sender: 'Georgi',
+        sender: this.users[1].name,
         shortMessage: 'Lorem Ipsum is simply dummy text of the printing and typesey..',
         date: '11:30 am',
-      }],
-    };
+        avatar: this.users[1].image,
+      }];
+    },
   },
 };
 </script>

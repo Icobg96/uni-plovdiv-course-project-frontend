@@ -28,21 +28,21 @@
             </div>
         </div>
         <ul>
-            <li @click="setActiveLink($event)" class="active">
-                <router-link to="/Dashboard">
+            <li :class="$route.name=='Feeds' ? 'active' : ''">
+                <router-link to="/feeds">
                     <i class="fa fa-address-book"></i> Дашборд
                 </router-link>
             </li>
-            <li @click="setActiveLink($event)">
+            <li :class="$route.name=='Profile' ? 'active' : ''">
                 <router-link to="/Profile/me"><i class="fa fa-home"></i> Моят профил</router-link>
             </li>
-            <li @click="setActiveLink($event)">
+            <li :class="$route.name=='Messages' ? 'active' : ''">
                 <router-link to="/Messages"><i class="fa fa-comments"></i> Съобщения</router-link>
             </li>
-            <li @click="setActiveLink($event)">
+            <li :class="$route.name=='Friends' ? 'active' : ''">
                 <router-link to="/Friends"><i class="fa fa-users"></i> Приятели</router-link>
             </li>
-             <li @click="setActiveLink($event)">
+             <li :class="$route.name=='Library' ? 'active' : ''">
                 <router-link to="/library/me">
                     <i class="fa fa-book"></i> Моята библиотека
                 </router-link>
@@ -55,18 +55,14 @@ import authComputed from '@/store/helpers';
 
 export default {
   name: 'UserSideBar',
+  data() {
+    return {
+      currentRoute: '',
+    };
+  },
   computed: {
     ...authComputed,
   },
-  methods: {
-    setActiveLink(e) {
-      const currentElement = e.target.parentNode;
-      const allElements = e.target.parentNode.parentNode.childNodes;
-      allElements.forEach((element) => {
-        element.classList.remove('active');
-      });
-      currentElement.classList.add('active');
-    },
-  },
+  methods: {},
 };
 </script>

@@ -3,12 +3,12 @@
         <ul>
             <li @click="toggleActive($event)">
                 <router-link to="">
-                    My friends
+                    Моите приятели
                 </router-link>
             </li>
             <li @click="toggleActive($event)">
                 <router-link active-class="active" to="">
-                    Find friends
+                    Намери приятели
                 </router-link>
             </li>
         </ul>

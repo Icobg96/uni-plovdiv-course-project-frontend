@@ -3,12 +3,17 @@
         <ul>
             <li>
                 <router-link active-class="active" to="/Feeds">
-                    News
+                    Всички постове
                 </router-link>
             </li>
             <li>
                 <router-link to="/documents">
-                    Documents
+                    Новини
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/documents">
+                    Документи
                 </router-link>
             </li>
         </ul>

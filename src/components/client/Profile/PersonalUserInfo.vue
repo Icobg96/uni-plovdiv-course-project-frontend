@@ -1,10 +1,10 @@
 <template>
-    <div class="profile-personal-info-block">
-        <div class="">
+    <div class="profile-personal-info-block h-100">
+        <div class="d-flex flex-column h-100">
             <div class="name">
                 {{user.name}}
             </div>
-            <div class="info">
+            <div class="info flex-grow-1">
                 <div class="info-row">
                     <div class="label">
                         Birthday:
@@ -59,25 +59,18 @@
                 </div>
             </div>
             <div class="info">
-                <div class="info-row">
+                <!-- <div class="info-row">
                     <button @click="toggleMoreInfo($event)"
                             class="btn btn-light-primary d-block w-100">
                         <span v-show="showFullInfo">Show less</span>
                         <span v-show="!showFullInfo">Show full info</span>
                     </button>
-                </div>
+                </div> -->
                 <div class="info-row mt-1">
                     <button v-if="isThisMe" class="btn btn-light-primary d-block w-100">
                         <span>Edit profile</span>
                     </button>
                 </div>
-            </div>
-            <div class="profile-stats">
-                <ul>
-                    <li><span>6</span>friends</li>
-                    <li><span>10</span>images</li>
-                    <li><span>4</span>files</li>
-                </ul>
             </div>
         </div>
     </div>

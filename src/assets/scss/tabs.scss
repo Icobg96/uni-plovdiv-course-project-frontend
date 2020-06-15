@@ -1,0 +1,38 @@
+.tabs-container{
+    .tabs-header{
+        border-bottom: 1px solid rgba($primary, .4);
+        display: flex;
+        flex-direction: row;
+        .tab{
+            flex-grow: 1;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            justify-content: center;
+            & > div{
+                padding: 20px;
+            }
+            i{
+                font-size: 24px;
+                margin-right: 10px;
+            }
+            &.active{
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    bottom: -1.5px;
+                    height: 3px;
+                    background-color: $primary;
+                    left: 0;
+                }
+            }
+        }
+    }
+    .tabs-content{
+        width: 100%;
+        margin-top: 20px;
+    }
+}

@@ -1,9 +1,9 @@
 <template>
     <div class="images-block m-0">
-        <div v-if="!isThisMe" >
+        <div>
             <div class="header">
-                {{user.name}}'s photos
-                <span class="counter">150</span>
+                Снимки
+                <span class="counter">23</span>
             </div>
             <div class="images-list">
                 <ul>
@@ -22,9 +22,9 @@
                 </ul>
             </div>
         </div>
-        <div v-else>
-            <div class="images-list text-center">
-                <i class="fa fa-camera"></i> Upload images
+        <div>
+            <div v-if="actions" class="btn btn-primary mt-2 w-100 images-list text-center">
+                Виж всички
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  props: ['user'],
+  props: ['user', 'actions'],
   name: 'UserImages',
   computed: {
     isThisMe() {

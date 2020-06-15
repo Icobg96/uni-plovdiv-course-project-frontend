@@ -2,7 +2,7 @@
     <div class="find-friends">
         <div class="header">
             <div class="heading">
-                Find friends
+                Намери приятели
             </div>
             <div class="search-friends">
                 <div class="input-group input-group-sm">
@@ -12,7 +12,7 @@
                             <i class="fa fa-search"></i>
                         </span>
                     </div>
-                    <input type="text" placeholder="Search.."
+                    <input type="text" placeholder="Търсене.."
                        aria-label="Sizing example input"
                        aria-describedby="inputGroup-sizing-sm"
                        class="form-control bg-transparent border-0 text-primary">
@@ -32,11 +32,11 @@
                                 {{friend.name}}
                             </div>
                             <div class="mutual-friends">
-                                no mutual friends
+                                нямате общи приятели
                             </div>
                         </div>
                         <div class="actions">
-                            <i class="fa fa-user-plus"></i>
+                            <i title="Добави към приятели" class="fa fa-user-plus"></i>
                         </div>
                     </div>
                 </div>

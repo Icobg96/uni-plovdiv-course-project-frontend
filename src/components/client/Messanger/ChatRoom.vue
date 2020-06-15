@@ -4,14 +4,14 @@
             <div class="back-row">
                 <div class="back-btn">
                     <router-link to="/messages">
-                        <i class="fa fa-chevron-left"></i> back
+                        <i class="fa fa-chevron-left"></i> назад
                     </router-link>
                 </div>
                 <div class="sender-name">
-                    {{sender}}
+                    {{sender.name}}
                 </div>
                 <div class="user-avatar icon-45">
-                    <img src="@/assets/images/users/avatar-4.jpg">
+                    <img :src="`/images/users/${sender.image}`">
                 </div>
             </div>
         </template>
@@ -19,7 +19,7 @@
             <div class="message">
                 <span class="time">10:20pm</span>
                 <div class="user-avatar icon-45">
-                    <img src="../../../assets/images/camera_50.png">
+                    <img :src="`/images/users/${sender.image}`">
                 </div>
                 <div class="user-message">
                     here goes sender's message
@@ -33,7 +33,7 @@
             <div class="message">
                 <span class="time">{{senderMessage.time}}</span>
                 <div class="user-avatar icon-45">
-                    <img src="../../../assets/images/camera_50.png">
+                    <img :src="`/images/users/${currentUser.image}`">
                 </div>
                 <div class="user-message">
                     {{senderMessage.message}}
@@ -79,7 +79,7 @@ import DropDown from '../DropDown.vue';
 import Messanger from './Messanger.vue';
 
 export default {
-  props: ['sender'],
+  props: ['sender', 'currentUser'],
   name: 'ChatRoom',
   components: {
     DropDown,
@@ -91,6 +91,11 @@ export default {
         sender: 'Ivan',
         message: 'Lorem Ipsum is simply dummy text of the printing and typesey..',
         time: '2:30 pm',
+      },
+      {
+        sender: 'Ivan',
+        message: 'Lorem g and typesey..',
+        time: '2:31 pm',
       }],
       currentMessage: '',
     };
@@ -100,6 +105,9 @@ export default {
       this.senderMessages.push({ message: this.currentMessage });
       this.currentMessage = '';
     },
+  },
+  mounted() {
+    console.log(this.sender);
   },
 };
 </script>

@@ -118,7 +118,7 @@ export default {
     return {
       user: {
         email: 'admin@admin.net',
-        name: 'Admin',
+        name: 'Leonardo',
         password: '123123',
       },
     };

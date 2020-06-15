@@ -3,24 +3,24 @@ import axios from 'axios';
 const state = {
   user: null,
   users: [{
-    name: 'Ivan Ivanov',
+    name: 'Dwayne Johnson',
     image: 'avatar-0.jpg',
   },
   {
-    name: 'Stoyan Stoyanov',
+    name: 'Johnny Depp',
     image: 'avatar-1.jpg',
   },
   {
-    name: 'Dimitri Dimitrov',
+    name: 'Tom Hardy',
     image: 'avatar-2.jpg',
   },
   {
-    name: 'Stoicho Ivanov',
+    name: 'Jim Carrey',
     image: 'avatar-3.jpg',
   },
   {
-    name: 'Georgi Stoyanov',
-    image: 'avatar-4.jpg',
+    name: 'Scarlett Johansson',
+    image: 'avatar-7.jpg',
   },
   {
     name: 'Ivan Dimitrov',
@@ -44,6 +44,7 @@ const getters = {
 const mutations = {
   SET_USER_DATA(state, userData) {
     state.user = userData;
+    state.user.image = 'avatar-4.jpg';
     localStorage.setItem('user', JSON.stringify(userData));
     axios.defaults.headers.common.Authorization = `Bearer ${userData.token}`;
   },
