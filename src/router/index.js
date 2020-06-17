@@ -48,6 +48,13 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
+    path: '/Library/:category',
+    name: 'Library',
+    component: Library,
+    props: true,
+    meta: { requiresAuth: true },
+  },
+  {
     path: '/profile/:user',
     name: 'Profile',
     props: true,

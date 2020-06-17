@@ -31,13 +31,14 @@
                     </div> -->
                     <nav class="header-menu">
                         <ul>
-                            <li @click="setActiveLink($event)" class="header-link active">
+                            <li :class="{'active' : $route.name=='Dashboard'}"
+                                class="header-link">
                                 <router-link to="/dashboard">Дашборд</router-link>
                             </li>
-                            <li @click="setActiveLink($event)" class="header-link">
+                            <li :class="{'active' : $route.name=='Feeds'}" class="header-link">
                                 <router-link to="/feeds">Новини</router-link>
                             </li>
-                            <li @click="setActiveLink($event)" class="header-link">
+                            <li :class="{'active' : $route.name=='Library'}" class="header-link">
                                 <router-link to="/library">Библиотека</router-link>
                             </li>
                         </ul>
@@ -85,20 +86,20 @@
                                 <div class="user-links text-primary text-left">
                                     <div class="main-links">
                                         <router-link class="link" to="/profile/me">
-                                            <i class="fa fa-user"></i> My profile
+                                            <i class="fa fa-user"></i> Профил
                                         </router-link>
                                         <router-link class="link" to="/profile/me/edit">
-                                            <i class="fa fa-edit"></i> Edit
+                                            <i class="fa fa-edit"></i> Редактиране
                                         </router-link>
                                         <router-link class="link" to="/setting">
-                                            <i class="fa fa-wrench"></i> Settings
+                                            <i class="fa fa-wrench"></i> Настройки
                                         </router-link>
                                     </div>
                                     <div class="footer">
                                         <div @click="logOut()"
                                                      class="link logout"
                                                      to="/setting">
-                                            <i class="fa fa-power-off"></i> Log out
+                                            <i class="fa fa-power-off"></i> Изход
                                         </div>
                                     </div>
                                 </div>
@@ -140,14 +141,6 @@ export default {
   methods: {
     logOut() {
       this.$store.dispatch('authentication/logOut');
-    },
-    setActiveLink(e) {
-      const currentElement = e.target.parentNode;
-      const allElements = e.target.parentNode.parentNode.childNodes;
-      allElements.forEach((element) => {
-        element.classList.remove('active');
-      });
-      currentElement.classList.add('active');
     },
   },
 };

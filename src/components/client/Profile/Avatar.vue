@@ -7,8 +7,11 @@
             <button class="btn btn-primary">Edit profile</button>
         </div>
         <div v-else class="actions">
-            <button class="btn btn-primary">Напиши съобщение
-              <i class="fa fa-comments ml-2"></i>
+            <button class="btn btn-primary">
+              <router-link class="text-white" :to="`/messages/${user.name}`">
+                Напиши съобщение
+                <i class="fa fa-comments ml-2"></i>
+              </router-link>
             </button>
             <!-- <button class="btn btn-primary">Add friend</button> -->
         </div>

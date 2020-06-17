@@ -28,22 +28,22 @@
             </div>
         </div>
         <ul>
-            <li :class="$route.name=='Feeds' ? 'active' : ''">
+            <li :class="{'active' : $route.name=='Feeds'}">
                 <router-link to="/feeds">
                     <i class="fa fa-address-book"></i> Дашборд
                 </router-link>
             </li>
-            <li :class="$route.name=='Profile' ? 'active' : ''">
+            <li :class="{'active' : $route.name=='Profile'}">
                 <router-link to="/Profile/me"><i class="fa fa-home"></i> Моят профил</router-link>
             </li>
-            <li :class="$route.name=='Messages' ? 'active' : ''">
+            <li :class="{'active' : $route.name=='Messages'}">
                 <router-link to="/Messages"><i class="fa fa-comments"></i> Съобщения</router-link>
             </li>
-            <li :class="$route.name=='Friends' ? 'active' : ''">
+            <li :class="{'active' : $route.name=='Friends'}">
                 <router-link to="/Friends"><i class="fa fa-users"></i> Приятели</router-link>
             </li>
-             <li :class="$route.name=='Library' ? 'active' : ''">
-                <router-link to="/library/me">
+             <li :class="{'active' : $route.name=='Library'}">
+                <router-link to="/library">
                     <i class="fa fa-book"></i> Моята библиотека
                 </router-link>
             </li>

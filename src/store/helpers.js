@@ -5,6 +5,7 @@ const authComputed = {
     loggedIn: 'authentication/loggedIn',
     currentUser: 'authentication/user',
     users: 'authentication/users',
+    library: 'library/library', //  to delete
   }),
 };
 
