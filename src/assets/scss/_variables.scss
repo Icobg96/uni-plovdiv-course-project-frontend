@@ -48,3 +48,12 @@ $container-max-widths: (
     height: 45px;
   }
 }
+
+@media only screen and (max-width: 550px){
+  .xs-static{
+    position: static !important;
+  }
+  .btn{
+    font-size: 14px !important;
+  }
+}

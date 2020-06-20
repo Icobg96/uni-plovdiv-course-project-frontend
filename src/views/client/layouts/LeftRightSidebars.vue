@@ -1,7 +1,7 @@
 <template>
-    <div id="app-layout" class="container">
+    <div id="app-layout" class="container left-right-bar-layout">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 left-side-bar">
           <nav class="user-left-side-bar section-block">
             <UserSideBar/>
           </nav>

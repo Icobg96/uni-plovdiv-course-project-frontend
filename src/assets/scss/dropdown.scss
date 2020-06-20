@@ -24,7 +24,31 @@
         border-bottom: 1px solid $transparent-primary;
     }
     .cs-dropdown-content{
-        padding: 10px;
+        padding: 0 10px 20px 10px;
+    }
+  }
+}
+@media only screen and (max-width: 550px){
+    .cs-dropdown-menu {
+      position: static;
+    .drop-down-btn {
+      & > div{
+      }
+    }
+    .cs-dropdown-container {
+      right: 0;
+      left: 0;
+      top: 100%;
+      transform: translateY(-1px);
+      width: 100%;
+      border-top: 1px solid rgba($dark-primary, 0.1);
+      border-bottom: 1px solid rgba($dark-primary, 0.2);
+      box-shadow: 0px 0px 20px rgba(0,0,0,0);
+      .cs-dropdown-title{
+        border-color: rgba($dark-primary, 0.1);
+      }
+      .cs-dropdown-content{
+      }
     }
   }
 }

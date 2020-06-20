@@ -1,11 +1,11 @@
 <template>
     <div v-if="currentUser">
-        <div class="header">
+        <div class="header d-none d-md-block">
             <div class="heading">
                 Моят профил
             </div>
         </div>
-        <div class="user">
+        <div class="user d-none d-md-flex">
             <div class="user-avatar">
                 <img src="../../assets/images/users/avatar-4.jpg">
             </div>
@@ -33,7 +33,7 @@
                     <i class="fa fa-address-book"></i> Дашборд
                 </router-link>
             </li>
-            <li :class="{'active' : $route.name=='Profile'}">
+            <li class="d-none d-md-block" :class="{'active' : $route.name=='Profile'}">
                 <router-link to="/Profile/me"><i class="fa fa-home"></i> Моят профил</router-link>
             </li>
             <li :class="{'active' : $route.name=='Messages'}">

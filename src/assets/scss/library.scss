@@ -86,3 +86,62 @@
         }
     }
 }
+@media only screen and (max-width: 550px){
+    .library-page{
+        .header{
+            .heading{
+                text-align: center;
+            }
+            .search-friends{
+            }
+        }
+        .documents-explore-list{
+            ul{
+                & > li{
+                    padding: 10px;
+                    font-size: 11px;
+                    &.list-heading{
+                        font-size: 12px;
+                    }
+                    span{
+                    }
+                    .name{
+                        width: 45%;
+                        img{
+                            width: 20px;
+                        }
+                    }
+                    .created{
+                        width: 25%;
+                        font-size: 11px;
+                    }
+                    .author{
+                    }
+                    .actions{
+                        i{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .library-categories{
+            padding: 10px;
+            .library-category{
+                width: 33.3333%;
+                padding: 5px;
+                a{
+                    padding: 15px 5px;
+                    justify-content: flex-start;
+                    font-size: 12px;
+                    .image{
+                        img{
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,7 +4,7 @@
             <img :src="`/images/users/${user.image}`">
         </div>
         <div v-if="isThisMe" class="actions">
-            <button class="btn btn-primary">Edit profile</button>
+            <button class="btn btn-primary">Редактирай профил</button>
         </div>
         <div v-else class="actions">
             <button class="btn btn-primary">
@@ -24,7 +24,7 @@ export default {
   name: 'Avatar',
   computed: {
     isThisMe() {
-      return this.user.name === 'me';
+      return this.$route.path.toLowerCase() === '/profile/me';
     },
   },
 };

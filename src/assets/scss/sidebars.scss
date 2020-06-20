@@ -96,3 +96,123 @@
         }
     }
 }
+
+@media only screen and (max-width: 550px){
+    .left-right-bar-layout{
+        & > div{
+            flex-direction: column-reverse;
+        }
+    }
+    .left-side-bar{
+        padding: 0 !important;
+        position: fixed !important;
+        top: 69px;
+        z-index: 999;
+    }
+    .user-left-side-bar{
+        border: none;
+        .user{
+            display: none;
+            .user-avatar{
+            }
+            .user-name{
+            }
+            .user-info{
+            }
+            .actions{
+                a{
+                }
+            }
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            li{
+                flex: 1;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+                text-align: center;
+                &.active{
+                    border-color: $primary;
+                    background: rgba($primary, 0.1);
+                    a{
+                        i{
+                        }
+                    }
+                }
+                a{
+                    display: block;
+                    padding: 10px 14px;
+                    font-size: 0;
+
+                    &:hover{
+                        i{
+                        }
+                    }
+                    i{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    .right-sidebar{
+        margin-bottom: 20px;
+        & > ul{
+            display: flex;
+            align-items: center;
+            li{
+                display: block;
+                width: 100%;
+                a{
+                    padding: 8px;
+                    border-left: 1px solid rgba($primary, 0.1);
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 14px;
+                    &:hover{
+                        color: $dark-primary;
+                        background: $transparent-primary;
+                    }
+                    &.active{
+                        color: $dark-primary;
+                        background: $transparent-primary;
+                        border-color: $dark-primary;
+                    }
+                }
+            }
+        }
+        &.library-sidebar{
+            .all-categories{
+                position: relative;
+                padding-right: 20px;
+                .drop-caret{
+                    right: 0;
+                    position: absolute;
+                    width: 20px;
+                    height: 100%;
+                    top: 0;
+                    background: $dark-primary;
+                    color: #fff;
+                }
+            }
+            & > ul{
+                position: relative;
+                flex-direction: column;
+                .library-category-links{
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    width: 100%;
+                    background: #fff;
+                    z-index: 1;
+                    display: none;
+                    &.visible{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

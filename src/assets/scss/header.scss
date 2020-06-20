@@ -144,3 +144,105 @@ button, a{
         outline: 0 !important;
     }
 }
+
+@media only screen and (max-width: 550px){
+    #header{
+        height: 70px;
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        .logo{
+            font-size: 17px;
+            font-weight: bold;
+            height: 100%;
+            min-height: 40px;
+            max-width: 140px;
+            a{
+            }
+        }
+        .header-menu{
+            ul{
+                li{
+                    &.active{
+                        a{
+                        }
+                    } 
+                    & + li{
+                        margin-left: 10px;
+                    }
+                    a{
+                        padding: 16px 0;
+                    }
+                }
+            }
+        }
+        .search-field{
+            input{
+                &:focus{
+                }
+            }
+        }
+        ::placeholder{
+        }
+        .user-profile{
+            .user-notifications{
+                margin-right: 6px;
+                & > div{
+                    padding: 0 5px;
+                }
+                .messages{
+                    .messages-dropdown{
+                        min-width: 140px;
+                        .no-messages{
+                            padding: 15px 10px;
+                            font-size: 12px;
+                        }
+                    }
+                    .btn{
+                        padding: 5px 10px;
+                        font-size: 12px;
+                    }
+                }
+                .notifications{
+                    .notifications-dropdown{
+                        .no-notifications{
+                            padding: 15px 10px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .user-drop-settings{
+            .cs-dropdown-container{
+                .cs-dropdown-content{
+                    padding: 0;
+                }
+            }
+            .user-avatar{
+                margin:0 4px;
+            }
+            .user-name{
+                font-size: 12px;
+            }
+            & > i{
+                font-size: 10px;
+            }
+            .user-links{
+                .main-links{
+                    padding: 0px;
+                }
+                .link{
+                    cursor: pointer;
+                    i{
+                    }
+                    &.logout{
+                        padding: 12px 18px;
+                    }
+                    &:hover{
+                    }
+                }
+            }
+        }
+    }
+}

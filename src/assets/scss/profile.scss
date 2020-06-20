@@ -145,7 +145,7 @@
                 overflow: hidden;
                 margin-left: -5px;
                 margin-right: -5px;
-                height: 60px;
+                // height: 60px;
                 li{
                     width: 25%;
                     padding:0 5px 5px 5px;
@@ -248,7 +248,7 @@
             overflow: hidden;
             margin-left: -5px;
             margin-right: -5px;
-            height: 160px !important;
+            // height: 160px !important;
             li{
                 width: 25%;
                 padding:0 5px 5px 5px;
@@ -257,6 +257,184 @@
                     width: 100%;
                     object-fit: cover;
                     object-position: center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .profile-page{
+        .section-block{
+        }
+        .avatar-block{
+            padding: 0px !important;
+            .avatar{
+                img{
+                }
+            }
+            .actions{
+                padding: 0 20px 10px 20px;
+                button{
+                }
+            }
+        }
+        .friends-block{
+            padding: 10px !important;
+            .counter{
+                & > span{
+                }
+            }
+            .friends-list{
+                li{
+                    margin: 0 0 10px 0;
+                    span{
+                        display: block;
+                        line-height: 14px;
+                        margin-top: 12px;
+                    }
+                    img{
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+            }
+        }
+        .profile-personal-info-block{
+            padding: 0 !important;
+            .name{
+            }
+            .info{
+                .info-row{
+                    align-items: flex-start;
+                    margin-bottom: 2px;
+                    .label{
+                        width: 40%;
+                        color: $light-primary;
+                    }
+                    .data{
+                        font-size: 13px;
+                    }
+                    &.heading{
+                        border-bottom: 1px solid $transparent-primary;
+                        margin: 15px 0 5px 0;
+                        padding-bottom: 4px;
+                        .label{
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .images-block{
+            padding: 10px !important;
+            .header{
+                & > span{
+                }
+            }
+            .images-list{
+                ul{
+                    li{
+                        img{
+                        }
+                    }
+                }
+            }
+        }
+        .user-posts{
+            margin-top: 15px;
+            & > .header{
+                background: #f5f7fa;
+                border-bottom: 1px solid $transparent-primary;
+                padding: 15px;
+            }
+        }
+        .tabs-container{
+            .tabs-header{
+                background: #fff;
+            }
+            .tabs-content{
+                padding: 20px;
+                margin-top: 15px;
+            }
+            .new-post-container{
+                .actions{
+                    padding: 0 20px 20px 20px;
+                }
+            }
+            &.user-profile-tabs-container{
+                margin-top: 15px;
+                & > .tabs-header{
+                    border-radius: 4px;
+                    border: 1px solid rgba(73, 88, 109, 0.2);
+                    .tab{
+                        & > div{
+                            display: flex;
+                            align-items: center;
+                            line-height: normal;
+                            font-size: 12px;
+                            padding: 8px !important;
+                            i{
+                                font-size: 20px !important;
+                            }                    
+                        }
+                        &::after{
+                            display: none;
+                        }
+                        &.active{
+                        }
+                    }
+                }
+                & > .tabs-content{
+                }
+            }
+        }
+    }
+    .user-profile-friends{
+        .friends-block{
+            .counter{
+                & > span{
+                }
+            }
+            .friends-list{
+                li{
+                    a{
+                        flex-direction: column;
+                        padding: 0 15px;
+                    }
+                    span{
+                        margin: 10px 0 0 0;
+                    }
+                    img{
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+    .user-profile-images{
+        .images-list{
+            ul{
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-wrap: wrap;
+                overflow: hidden;
+                margin-left: -5px;
+                margin-right: -5px;
+                li{
+                    width: 33.3333% !important;
+                    padding:5px 5px 5px 5px !important;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                        height: 80px !important;
+                    }
                 }
             }
         }

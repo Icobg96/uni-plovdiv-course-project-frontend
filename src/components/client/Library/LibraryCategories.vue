@@ -2,7 +2,7 @@
     <div>
         <div class="header">
             <div class="heading">
-                Намеи категория
+                Намери категория
             </div>
             <div class="search-friends">
                 <div class="input-group input-group-sm">

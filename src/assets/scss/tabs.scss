@@ -36,3 +36,34 @@
         margin-top: 20px;
     }
 }
+
+@media only screen and (max-width: 550px){
+    .tabs-container{
+        .tabs-header{
+            .tab{
+                & > div{
+                    padding: 10px !important;
+                    font-size: 12px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    justify-content: center;
+                    flex-direction: column;
+                    line-height: normal;
+                }
+                i{
+                    margin-bottom: 4px;
+                    font-size: 22px !important;
+                    margin-right: 0px !important;
+                }
+                &.active{
+                    &::after{
+                    }
+                }
+            }
+        }
+        .tabs-content{
+        }
+    }
+}

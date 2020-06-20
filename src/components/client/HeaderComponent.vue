@@ -2,7 +2,7 @@
     <header id="header" class="bg-white text-primary">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 col-6">
                     <div class="logo d-flex align-items-center">
                         <router-link v-if="!currentUser" to="/">
                             <img src="@/assets/images/logo.png">
@@ -12,7 +12,7 @@
                         </router-link>
                     </div>
                 </div>
-                <div v-if="loggedIn" class="col-md-6 text-left">
+                <div v-if="loggedIn" class="col-md-6 text-left d-none d-md-block">
                     <!-- <div class="search-field bg-dark-primary">
                         <div class="input-group input-group-sm">
                             <div class="input-group-prepend px-1">
@@ -44,7 +44,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div v-if="loggedIn" class="col-md-3 text-right">
+                <div v-if="loggedIn" class="col-md-3 col-6 text-right xs-static">
                     <div class="user-profile d-flex align-items-center justify-content-end">
                         <div
                             class="user-notifications
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <div v-else class="col-md-9 text-right">
+                <div v-else class="col-md-9 col-6 text-right">
                     <nav class="header-menu">
                         <ul>
                             <li class="header-link">
