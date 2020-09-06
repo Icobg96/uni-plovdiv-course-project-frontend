@@ -23,6 +23,13 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
+    path: '/Feeds/:category',
+    name: 'Feeds',
+    props: true,
+    component: Feed,
+    meta: { requiresAuth: true },
+  },
+  {
     path: '/messages',
     name: 'Messages',
     component: Messages,

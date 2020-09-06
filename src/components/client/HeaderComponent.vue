@@ -53,23 +53,23 @@
                                 <DropDown :button="`<i class='fa fa-comments'></i>`">
                                     <div class="messages-dropdown">
                                         <div v-if="!notifications" class="no-messages">
-                                            There are no new messages.
+                                            Няма нови съобщения.
                                         </div>
                                     </div>
                                     <div>
                                         <router-link to="/messages"
                                                      class="d-block w-100 btn btn-light-primary">
-                                            Go to messages
+                                            Виж всички съобщения
                                         </router-link>
                                     </div>
                                 </DropDown>
                             </div>
                             <div class="notifications">
-                                <DropDown :title="'Notifications'"
+                                <DropDown :title="'Известия'"
                                           :button="`<i class='fa fa-bell'></i>`">
                                     <div class="notifications-dropdown">
                                         <div v-if="!notifications" class="no-notifications">
-                                            There are no new notifications.
+                                            Няма нови известия.
                                         </div>
                                     </div>
                                 </DropDown>

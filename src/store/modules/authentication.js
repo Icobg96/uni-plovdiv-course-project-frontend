@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const host = '';
 const state = {
   user: null,
+  errors: null,
   users: [{
     name: 'Dwayne Johnson',
     image: 'avatar-0.jpg',
@@ -39,6 +41,9 @@ const getters = {
   user(state) {
     return state.user;
   },
+  errors(state) {
+    return state.errors;
+  },
 };
 
 const mutations = {
@@ -52,25 +57,30 @@ const mutations = {
     localStorage.removeItem('user');
     window.location.reload();
   },
+  SET_ERRORS(state, errors) {
+    state.errors = errors;
+  },
 };
 
 const actions = {
   register(context, user) {
-    axios.post('/register', user)
+    axios.post(`${host}/api/user/register`, user)
       .then((data) => {
         context.commit('SET_USER_DATA', data.user);
       })
       .catch((err) => {
         console.log(err);
+        context.commit('SET_ERRORS', err);
       });
   },
   login(context, user) {
-    // axios.post('/login', user)
+    // axios.post(`${host}/api/user/login`, user)
     //   .then((data) => {
     //     context.commit('SET_USER_DATA', data.user);
     //   })
     //   .catch((err) => {
     //     console.log(err);
+    //     context.commit('SET_ERRORS', err);
     //   });
     //  for testing
     if (user.email && user.password) {

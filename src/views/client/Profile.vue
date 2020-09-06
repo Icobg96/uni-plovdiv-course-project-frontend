@@ -54,26 +54,14 @@
                     </div>
                   </div>
               </Tab>
-              <Tab title="<i class='fa fa-file'></i> Материали(10)">
-                  <div class="content-block">
-                      Всички Материали тук
+              <Tab title="<i class='fa fa-file'></i> Материали(0)">
+                  <div class="content-block text-center">
+                      Няма налични материали
                   </div>
               </Tab>
             </Tabs>
           </div>
         </div>
-        <!-- <div class="row">
-          <div class="col-md-12">
-              <div class="section-block user-posts mt-3 pt-0">
-                    <div class="header">
-                        Постове на {{currentUser.name}}
-                    </div>
-                    <div v-for="(post, index) in posts" :key="index" class="posts-container">
-                        <NewsPost :post="post"/>
-                    </div>
-                </div>
-          </div>
-        </div> -->
     </div>
 </template>
 <script>

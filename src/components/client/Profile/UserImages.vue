@@ -3,7 +3,7 @@
         <div>
             <div class="header">
                 Снимки
-                <span class="counter">23</span>
+                <span class="counter">4</span>
             </div>
             <div class="images-list">
                 <ul>

@@ -4,8 +4,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <PublishPostSection/>
-                    <div v-for="(post, index) in posts" :key="index" class="section-block mb-4">
-                        <NewsPost :post="post"/>
+                    <div class="posts-news">
+                      <div v-for="(post, index) in allPosts"
+                      :key="index" class="section-block mb-4">
+                          <NewsPost :post="post"/>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -21,6 +24,7 @@ export default {
     PublishPostSection,
     NewsPost,
   },
+  props: ['category'],
   name: 'Feed',
   data() {
     return {
@@ -147,6 +151,25 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    allPosts() {
+      if (this.category) {
+        switch (this.category) {
+          case 'news':
+            return this.posts.filter((post) => !post.document);
+            // break;
+          case 'documents':
+            return this.posts.filter((post) => post.document);
+            // break;
+          default:
+            return this.posts;
+            // break;
+        }
+      } else {
+        return this.posts;
+      }
+    },
   },
   created() {
     this.$store.commit('layouts/SET_LAYOUT', 'left-right-sidebars-layout');

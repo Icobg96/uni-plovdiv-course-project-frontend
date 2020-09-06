@@ -2,17 +2,19 @@
     <div class="right-sidebar feeds-sidebar section-block p-0">
         <ul>
             <li>
-                <router-link active-class="active" to="/Feeds">
+                <router-link :class="{'active' : $route.fullPath === '/Feeds'}" to="/Feeds">
                     Всички постове
                 </router-link>
             </li>
             <li>
-                <router-link to="/documents">
+                <router-link :class="{'active' : $route.fullPath === '/Feeds/news'}"
+                to="/Feeds/news">
                     Новини
                 </router-link>
             </li>
             <li>
-                <router-link to="/documents">
+                <router-link :class="{'active' : $route.fullPath === '/Feeds/documents'}"
+                to="/Feeds/documents">
                     Документи
                 </router-link>
             </li>

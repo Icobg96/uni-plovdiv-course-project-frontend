@@ -153,7 +153,7 @@ export default {
     getFile(event) {
       const file = event.target.files[0];
       if (file) {
-        if (file.type === 'image/jpeg' || file.type === 'image/jpng') {
+        if (file.type === 'image/jpeg' || file.type === 'image/png') {
           this.setImagePreview(file);
         } else {
           this.setDocumentPreview(file);

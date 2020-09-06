@@ -111,6 +111,7 @@
     }
     .user-left-side-bar{
         border: none;
+        border-top: 1px solid rgba($primary,.1);
         .user{
             display: none;
             .user-avatar{

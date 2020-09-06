@@ -1,13 +1,14 @@
 <template>
     <div class="right-sidebar friends-sidebar section-block p-0">
         <ul>
-            <li @click="toggleActive($event)">
-                <router-link to="">
+            <li>
+                <router-link to="/friends" :class="{'active' : $route.fullPath === '/friends'}">
                     Моите приятели
                 </router-link>
             </li>
-            <li @click="toggleActive($event)">
-                <router-link active-class="active" to="">
+            <li>
+                <router-link to="/friends"
+                :class="{'active' : $route.fullPath === '/friends/search'}">
                     Намери приятели
                 </router-link>
             </li>
